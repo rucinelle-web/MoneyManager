@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "jqG1IXUw1Ck=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pc\\MoneyManager\\MoneyManager.API\\MoneyManager.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "C:\\Users\\Pc\\MoneyManager\\MoneyManager.API\\MoneyManager.API.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Pc\\MoneyManager\\MoneyManager.API\\MoneyManager.API.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
