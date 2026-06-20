@@ -1,14 +1,14 @@
 ﻿namespace MoneyManager.Domain.Entities;
 
-public class Income
+public class Budget
 {
     public int Id { get; set; }
 
-    public decimal Amount { get; set; }
+    public decimal AmountLimit { get; set; }
 
-    public string Description { get; set; } = string.Empty;
+    public DateTime StartDate { get; set; }
 
-    public DateTime IncomeDate { get; set; }
+    public DateTime EndDate { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

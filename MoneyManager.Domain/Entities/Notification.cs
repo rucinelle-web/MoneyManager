@@ -1,14 +1,14 @@
 ﻿namespace MoneyManager.Domain.Entities;
 
-public class Income
+public class Notification
 {
     public int Id { get; set; }
 
-    public decimal Amount { get; set; }
+    public string Title { get; set; } = string.Empty;
 
-    public string Description { get; set; } = string.Empty;
+    public string Message { get; set; } = string.Empty;
 
-    public DateTime IncomeDate { get; set; }
+    public bool IsRead { get; set; } = false;
 
     public DateTime CreatedAt { get; set; }
 
@@ -17,8 +17,4 @@ public class Income
     public string UserId { get; set; } = string.Empty;
 
     public ApplicationUser User { get; set; } = null!;
-
-    public int CategoryId { get; set; }
-
-    public Category Category { get; set; } = null!;
 }
