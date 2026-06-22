@@ -1,0 +1,16 @@
+C:\Users\Pc\MoneyManager\MoneyManager.Application\bin\Debug\net10.0\MoneyManager.Application.deps.json
+C:\Users\Pc\MoneyManager\MoneyManager.Application\bin\Debug\net10.0\MoneyManager.Application.dll
+C:\Users\Pc\MoneyManager\MoneyManager.Application\bin\Debug\net10.0\MoneyManager.Application.pdb
+C:\Users\Pc\MoneyManager\MoneyManager.Application\bin\Debug\net10.0\MoneyManager.Domain.dll
+C:\Users\Pc\MoneyManager\MoneyManager.Application\bin\Debug\net10.0\MoneyManager.Domain.pdb
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.csproj.AssemblyReference.cache
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.AssemblyInfoInputs.cache
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.AssemblyInfo.cs
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.csproj.CoreCompileInputs.cache
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.sourcelink.json
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyMan.A0443C57.Up2Date
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.dll
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\refint\MoneyManager.Application.dll
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\MoneyManager.Application.pdb
+C:\Users\Pc\MoneyManager\MoneyManager.Application\obj\Debug\net10.0\ref\MoneyManager.Application.dll

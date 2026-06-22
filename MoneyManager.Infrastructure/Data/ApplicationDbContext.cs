@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MoneyManager.Domain.Entities;
 
 namespace MoneyManager.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext
+    : IdentityDbContext<ApplicationUser>
 {
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options)
@@ -11,15 +13,27 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<ApplicationUser> Users { get; set; }
+    public DbSet<Category> Categories => Set<Category>();
 
-    public DbSet<Category> Categories { get; set; }
+    public DbSet<Expense> Expenses => Set<Expense>();
 
-    public DbSet<Expense> Expenses { get; set; }
+    public DbSet<Income> Incomes => Set<Income>();
 
-    public DbSet<Income> Incomes { get; set; }
+    public DbSet<Budget> Budgets => Set<Budget>();
 
-    public DbSet<Budget> Budgets { get; set; }
+    public DbSet<Notification> Notifications => Set<Notification>();
 
-    public DbSet<Notification> Notifications { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.ApplyConfigurationsFromAssembly(
+            typeof(ApplicationDbContext).Assembly);
+
+            foreach (var fk in modelBuilder.Model.GetEntityTypes()
+    .SelectMany(e => e.GetForeignKeys()))
+{
+    fk.DeleteBehavior = DeleteBehavior.NoAction;
+}
+    }
 }

@@ -1,24 +1,25 @@
-﻿namespace MoneyManager.Domain.Entities;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class ApplicationUser
+namespace MoneyManager.Domain.Entities;
+
+public class ApplicationUser : IdentityUser
 {
     public string FirstName { get; set; } = string.Empty;
 
     public string LastName { get; set; } = string.Empty;
 
     public ICollection<Category> Categories { get; set; }
-    = new List<Category>();
+        = new List<Category>();
 
     public ICollection<Expense> Expenses { get; set; }
-    = new List<Expense>();
+        = new List<Expense>();
 
     public ICollection<Income> Incomes { get; set; }
-    = new List<Income>();
+        = new List<Income>();
 
     public ICollection<Budget> Budgets { get; set; }
-    = new List<Budget>();
+        = new List<Budget>();
 
     public ICollection<Notification> Notifications { get; set; }
-    = new List<Notification>();
-
+        = new List<Notification>();
 }

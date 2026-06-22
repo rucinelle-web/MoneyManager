@@ -21,4 +21,13 @@ public class Category
     public string UserId { get; set; } = string.Empty;
 
     public ApplicationUser User { get; set; } = null!;
+
+    public ICollection<Expense> Expenses { get; set; }
+    = new List<Expense>();
+
+public ICollection<Income> Incomes { get; set; }
+    = new List<Income>();
+
+public ICollection<Budget> Budgets { get; set; }
+    = new List<Budget>();
 }
