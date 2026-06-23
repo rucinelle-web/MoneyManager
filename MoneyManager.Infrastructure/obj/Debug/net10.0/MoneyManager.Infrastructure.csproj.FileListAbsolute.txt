@@ -2,8 +2,10 @@ C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyMana
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Infrastructure.runtimeconfig.json
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Infrastructure.dll
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Infrastructure.pdb
+C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Application.dll
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Domain.dll
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Domain.pdb
+C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Application.pdb
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\MoneyManager.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\MoneyManager.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\MoneyManager.Infrastructure.AssemblyInfoInputs.cache
@@ -16,5 +18,3 @@ C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\refint\Mo
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\MoneyManager.Infrastructure.pdb
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\MoneyManager.Infrastructure.genruntimeconfig.cache
 C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\obj\Debug\net10.0\ref\MoneyManager.Infrastructure.dll
-C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Application.dll
-C:\Users\Pc\MoneyManager\MoneyManager.Infrastructure\bin\Debug\net10.0\MoneyManager.Application.pdb
