@@ -8,6 +8,7 @@ using MoneyManager.Infrastructure.Data;
 using MoneyManager.Infrastructure.Repositories;
 using System.Text;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Database

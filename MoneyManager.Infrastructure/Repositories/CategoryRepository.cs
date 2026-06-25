@@ -18,6 +18,13 @@ public class CategoryRepository : ICategoryRepository
     {
         return await _context.Categories.ToListAsync();
     }
+    public async Task<IEnumerable<Category>> GetByUserIdAsync(string userId)
+    {
+        return await _context.Categories
+        .Where(c => c.UserId == userId)
+        .ToListAsync();
+    }
+
 
     public async Task<Category?> GetByIdAsync(int id)
     {

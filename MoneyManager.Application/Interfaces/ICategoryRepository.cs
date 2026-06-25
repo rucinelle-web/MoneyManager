@@ -4,13 +4,16 @@ namespace MoneyManager.Application.Interfaces;
 
 public interface ICategoryRepository
 {
-    Task<IEnumerable<Category>> GetAllAsync();
+Task<IEnumerable<Category>> GetAllAsync();
 
-    Task<Category?> GetByIdAsync(int id);
+Task<IEnumerable<Category>> GetByUserIdAsync(string userId);
 
-    Task AddAsync(Category category);
+Task<Category?> GetByIdAsync(int id);
 
-    Task UpdateAsync(Category category);
+Task AddAsync(Category category);
 
-    Task DeleteAsync(Category category);
+Task UpdateAsync(Category category);
+
+Task DeleteAsync(Category category);
+
 }
