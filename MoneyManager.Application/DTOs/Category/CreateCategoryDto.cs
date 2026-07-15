@@ -1,4 +1,4 @@
-namespace MoneyManager.Application.DTOs;
+namespace MoneyManager.Application.DTOs.Category;
 
 public class CreateCategoryDto
 {

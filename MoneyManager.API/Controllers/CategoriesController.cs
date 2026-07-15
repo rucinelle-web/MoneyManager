@@ -1,103 +1,132 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MoneyManager.Application.DTOs.Category;
 using MoneyManager.Application.Interfaces;
-using MoneyManager.Application.DTOs;
 using MoneyManager.Domain.Entities;
 using MoneyManager.Domain.Enums;
+using System.Security.Claims;
 
 namespace MoneyManager.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class CategoriesController : ControllerBase
 {
-private readonly ICategoryRepository _categoryRepository;
+    private readonly ICategoryRepository _categoryRepository;
 
-public CategoriesController(ICategoryRepository categoryRepository)
-{
-    _categoryRepository = categoryRepository;
-}
-
-[HttpGet]
-public async Task<IActionResult> GetAll()
-{
-    var categories = await _categoryRepository.GetAllAsync();
-
-    return Ok(categories);
-}
-
-[HttpGet("{id}")]
-public async Task<IActionResult> GetById(int id)
-{
-var category = await _categoryRepository.GetByIdAsync(id);
-
-if (category == null)
-{
-    return NotFound();
-}
-
-return Ok(category);
-
-}
-
-[HttpPost]
-public async Task<IActionResult> Create(CreateCategoryDto dto)
-{
-    var category = new Category
+    public CategoriesController(ICategoryRepository categoryRepository)
     {
-        Name = dto.Name,
-        Description = dto.Description,
-        Type = CategoryType.Expense,
-        CreatedAt = DateTime.UtcNow,
-        UpdatedAt = DateTime.UtcNow,
-        IsActive = true,
+        _categoryRepository = categoryRepository;
+    }
 
-        // Utilisateur fixe pour les tests
-        UserId = "55c52b21-765e-4fb2-b163-9562de696068"
-    };
+    private string? UserId =>
+        User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-    await _categoryRepository.AddAsync(category);
+    // GET : api/Categories
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        if (string.IsNullOrEmpty(UserId))
+        {
+            return Unauthorized();
+        }
 
-    return CreatedAtAction(
-        nameof(GetAll),
-        new { id = category.Id },
-        category);
-}
+        var categories = await _categoryRepository.GetByUserIdAsync(UserId);
 
-[HttpPut("{id}")]
-public async Task<IActionResult> Update(
-int id,
-UpdateCategoryDto dto)
-{
-var category = await _categoryRepository.GetByIdAsync(id);
+        return Ok(categories);
+    }
 
-if (category == null)
-{
-    return NotFound();
-}
+    // GET : api/Categories/5
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        if (string.IsNullOrEmpty(UserId))
+        {
+            return Unauthorized();
+        }
 
-category.Name = dto.Name;
-category.Description = dto.Description;
-category.UpdatedAt = DateTime.UtcNow;
+        var category = await _categoryRepository.GetByIdAsync(id);
 
-await _categoryRepository.UpdateAsync(category);
+        if (category == null)
+        {
+            return NotFound();
+        }
 
-return NoContent();
+        return Ok(category);
+    }
 
-}
+    // POST : api/Categories
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateCategoryDto dto)
+    {
+        if (string.IsNullOrEmpty(UserId))
+        {
+            return Unauthorized();
+        }
 
-[HttpDelete("{id}")]
-public async Task<IActionResult> Delete(int id)
-{
-var category = await _categoryRepository.GetByIdAsync(id);
+        var category = new Category
+        {
+            Name = dto.Name,
+            Description = dto.Description,
+            Type = CategoryType.Expense,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
+            IsActive = true,
+            UserId = UserId
+        };
 
-if (category == null)
-{
-    return NotFound();
-}
+        await _categoryRepository.AddAsync(category);
 
-await _categoryRepository.DeleteAsync(category);
+        return CreatedAtAction(
+            nameof(GetById),
+            new { id = category.Id },
+            category);
+    }
 
-return NoContent();
+    // PUT : api/Categories/5
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, UpdateCategoryDto dto)
+    {
+        if (string.IsNullOrEmpty(UserId))
+        {
+            return Unauthorized();
+        }
 
-}
+        var category = await _categoryRepository.GetByIdAsync(id);
+
+        if (category == null)
+        {
+            return NotFound();
+        }
+
+        category.Name = dto.Name;
+        category.Description = dto.Description;
+        category.UpdatedAt = DateTime.UtcNow;
+
+        await _categoryRepository.UpdateAsync(category);
+
+        return NoContent();
+    }
+
+    // DELETE : api/Categories/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        if (string.IsNullOrEmpty(UserId))
+        {
+            return Unauthorized();
+        }
+
+        var category = await _categoryRepository.GetByIdAsync(id);
+
+        if (category == null)
+        {
+            return NotFound();
+        }
+
+        await _categoryRepository.DeleteAsync(category);
+
+        return NoContent();
+    }
 }

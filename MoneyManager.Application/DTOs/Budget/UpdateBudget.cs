@@ -1,4 +1,4 @@
-namespace MoneyManager.Application.DTOs;
+namespace MoneyManager.Application.DTOs.Budget;
 
 public class UpdateBudgetDto
 {

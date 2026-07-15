@@ -29,6 +29,14 @@ public async Task<IEnumerable<Expense>> GetByUserIdAsync(string userId)
         .ToListAsync();
 }
 
+public async Task<decimal> GetTotalByCategoryAsync(string userId, int categoryId)
+{
+    return await _context.Expenses
+        .Where(e => e.UserId == userId &&
+                    e.CategoryId == categoryId)
+        .SumAsync(e => e.Amount);
+}
+
 public async Task<Expense?> GetByIdAsync(int id)
 {
     return await _context.Expenses

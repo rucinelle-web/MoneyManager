@@ -8,6 +8,8 @@ using MoneyManager.Infrastructure.Data;
 using MoneyManager.Infrastructure.Repositories;
 using System.Text;
 using System.Text.Json.Serialization;
+using MoneyManager.Application.Services;
+
 
 
 
@@ -23,6 +25,10 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
 builder.Services.AddScoped<IIncomeRepository, IncomeRepository>();
 builder.Services.AddScoped<IBudgetRepository, BudgetRepository>();
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+builder.Services.AddScoped<IBudgetNotificationService, BudgetNotificationService>();
+builder.Services.AddScoped<IExpenseService, ExpenseService>();
+
 // Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()

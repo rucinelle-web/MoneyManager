@@ -4,14 +4,15 @@ namespace MoneyManager.Application.Interfaces;
 
 public interface IIncomeRepository
 {
-Task<IEnumerable<Income>> GetAllAsync();
+    Task<IEnumerable<Income>> GetAllAsync();
 
-Task<Income?> GetByIdAsync(int id);
+    Task<IEnumerable<Income>> GetByUserIdAsync(string userId);
 
-Task AddAsync(Income income);
+    Task<Income?> GetByIdAsync(int id);
 
-Task UpdateAsync(Income income);
+    Task AddAsync(Income income);
 
-Task DeleteAsync(Income income);
+    Task UpdateAsync(Income income);
 
+    Task DeleteAsync(Income income);
 }

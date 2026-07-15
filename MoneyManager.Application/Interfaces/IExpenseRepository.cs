@@ -14,6 +14,7 @@ Task AddAsync(Expense expense);
 
 Task UpdateAsync(Expense expense);
 
+Task<decimal> GetTotalByCategoryAsync(string userId, int categoryId);
 Task DeleteAsync(Expense expense);
 
 
