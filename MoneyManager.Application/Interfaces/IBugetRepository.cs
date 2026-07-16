@@ -4,14 +4,18 @@ namespace MoneyManager.Application.Interfaces;
 
 public interface IBudgetRepository
 {
-Task<IEnumerable<Budget>> GetAllAsync();
+    Task<IEnumerable<Budget>> GetAllAsync();
 
-Task<Budget?> GetByIdAsync(int id);
+    // Nouvelle méthode
+    Task<IEnumerable<Budget>> GetByUserIdAsync(string userId);
 
-Task AddAsync(Budget budget);
+    Task<Budget?> GetByIdAsync(int id);
 
-Task UpdateAsync(Budget budget);
+    Task AddAsync(Budget budget);
 
-Task DeleteAsync(Budget budget);
+    Task UpdateAsync(Budget budget);
 
+    Task DeleteAsync(Budget budget);
+
+    Task<Budget?> GetByUserAndCategoryAsync(string userId, int categoryId);
 }

@@ -1,6 +1,6 @@
-namespace MoneyManager.Application.DTOs;
+namespace MoneyManager.Application.DTOs.Expense;
 
-public class CreateExpenseDto
+public class UpdateExpenseDto
 {
 public decimal Amount { get; set; }
 

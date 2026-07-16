@@ -22,6 +22,14 @@ public async Task<IEnumerable<Budget>> GetAllAsync()
         .ToListAsync();
 }
 
+public async Task<IEnumerable<Budget>> GetByUserIdAsync(string userId)
+{
+    return await _context.Budgets
+        .Where(b => b.UserId == userId)
+        .Include(b => b.Category)
+        .ToListAsync();
+}
+
 public async Task<Budget?> GetByIdAsync(int id)
 {
     return await _context.Budgets
@@ -45,6 +53,14 @@ public async Task DeleteAsync(Budget budget)
 {
     _context.Budgets.Remove(budget);
     await _context.SaveChangesAsync();
+}
+
+public async Task<Budget?> GetByUserAndCategoryAsync(string userId, int categoryId)
+{
+    return await _context.Budgets
+        .FirstOrDefaultAsync(b =>
+            b.UserId == userId &&
+            b.CategoryId == categoryId);
 }
 
 
